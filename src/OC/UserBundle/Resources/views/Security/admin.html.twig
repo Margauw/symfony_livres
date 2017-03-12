@@ -1,0 +1,15 @@
+{% extends 'BiblioBundle::layout.html.twig' 	%}
+
+
+{%  block title %}  Page Admin<{%  endblock %}
+
+{%  block body %}
+    <h1> Page Admin </h1>
+{% if is_granted('ROLE_ADMIN') %}
+    <h2> Vous êtes un admin </h2>
+
+    {% else %}
+        <h2> Vous n'êtes pas autorisés à voir cette page </h2>
+
+{% endif %}
+{% endblock %}

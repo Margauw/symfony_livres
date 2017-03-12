@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Devschool Bibliothèque{% endblock %}</title>
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
+</head>
+<body>
+<ul class="menu">
+    <li><a href="{{ path('page_livres') }}">Livres</a></li>
+    <li><a href="{{ path('admin') }}">Admin</a></li>
+
+    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+        <li><a href="{{ path('logout') }}">Se Déconnecter</a></li>
+     {% else %}
+         <li><a href="{{ path('login_check') }}">Login</a></li>
+    {% endif %}
+</ul>
+
+<div id="content">
+    {% block body %}{% endblock %}
+</div>
+</body>
+</html>

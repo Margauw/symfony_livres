@@ -1,0 +1,23 @@
+oc_user:
+    resource: "@OCUserBundle/Controller"
+    type:     annotation
+    prefix:   /
+
+logout:
+    path: /logout
+
+
+devschool_admin:
+    resource: "@DevschoolAdminBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+biblio:
+    resource: "@BiblioBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
+

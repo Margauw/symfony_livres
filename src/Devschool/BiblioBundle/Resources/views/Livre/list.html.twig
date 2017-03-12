@@ -1,0 +1,19 @@
+{% extends 'BiblioBundle::layout.html.twig' 	%}
+
+{%  block title %}<h1>{{ titre|upper }} ({{ livres|length }})</h1> {%  endblock %}
+
+{%  block body %}
+    <ul class="liste">
+
+        {% for livre in livres %}
+            <li>
+                <h2><a href="{{ path('page_livre', {'id': livre.id}) }}">{{ livre.titre }}</a></h2>
+                {% if livre.auteur == "J. K. Rowling" %}
+                <strong>{{ livre.auteur }}</strong>
+                {% else %}
+                <span>{{ livre.auteur }}</span>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+{%  endblock %}
